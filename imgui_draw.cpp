@@ -4582,7 +4582,7 @@ static ImFontGlyph* ImGui_ImplStbTrueType_FontBakedLoadGlyph(ImFontAtlas* atlas,
         if (pack_id == ImFontAtlasRectId_Invalid)
         {
             // Pathological out of memory case (TexMaxWidth/TexMaxHeight set too small?)
-            IM_ASSERT_USER_ERROR(pack_id != ImFontAtlasRectId_Invalid, "Out of texture memory.");
+            IM_ASSERT(pack_id != ImFontAtlasRectId_Invalid && "Out of texture memory.");
             return NULL;
         }
         ImTextureRect* r = ImFontAtlasPackGetRect(atlas, pack_id);
