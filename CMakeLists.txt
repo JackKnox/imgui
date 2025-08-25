@@ -25,5 +25,12 @@ file(GLOB_RECURSE SOURCE_DIR
     "backends/imgui_impl_opengl3_loader.h"
 )
 
+FetchContent_Declare(
+    GLFW
+    GIT_REPOSITORY https://github.com/glfw/glfw.git
+    GIT_TAG        3.4
+)
+
+FetchContent_MakeAvailable(GLFW)
 add_library(ImGui STATIC ${SOURCE_DIR})
 target_include_directories(ImGui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
