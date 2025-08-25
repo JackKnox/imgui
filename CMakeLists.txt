@@ -27,4 +27,3 @@ file(GLOB_RECURSE SOURCE_DIR
 
 add_library(ImGui STATIC ${SOURCE_DIR})
 target_include_directories(ImGui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
-target_link_libraries(ImGui PUBLIC glfw)
